@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Homepage UNINDRA</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#ddd;
+}
+.container{
+    width:900px;
+    margin:auto;
+    background:white;
+    border:2px solid black;
+}
+.header{
+    display:flex;
+    align-items:center;
+    background:#bfe8eb;
+    border-bottom:2px solid black;
+    padding:10px;
+}
+.header img{
+    width:80px;
+}
+.header .judul{
+    flex:1;
+    text-align:center;
+}
+.header h1{
+    margin:0;
+    font-size:26px;
+}
+
+.isi{
+    display:flex;
+    border-bottom:2px solid black;
+}
+
+.menu{
+    width:25%;
+    border-right:2px solid black;
+    padding:15px;
+    text-align:center;
+}
+.menu button{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    background:crimson;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.content{
+    width:75%;
+    padding:20px;
+}
+
+.form-row{
+    display:flex;
+    align-items:center;
+    margin-bottom:12px;
+}
+.form-row label{
+    width:80px;
+}
+.form-row input,
+.form-row textarea{
+    width:300px;
+    padding:8px;
+}
+.submit{
+    width:300px;
+    padding:10px;
+    background:green;
+    color:white;
+    border:none;
+    margin-left:80px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+th, td{
+    border:1px solid black;
+    padding:8px;
+    text-align:center;
+    font-size:14px;
+}
+.waktu{background:#eeeeee;font-weight:bold;}
+.senin{background:#ffcccc;}
+.selasa{background:#ccffcc;}
+.rabu{background:#ccccff;}
+.kamis{background:#fff2cc;}
+.istirahat{
+    background:#e6e6e6;
+    font-weight:bold;
+}
+
+.footer{
+    background:#bfe8eb;
+    text-align:center;
+    padding:10px;
+    border-top:2px solid black;
+}
+</style>
+
+<script>
+function tampilForm(){
+    document.getElementById("content").innerHTML = `
+    <h2>Input Data Mahasiswa</h2>
+    <div class="form-row">
+        <label>NPM</label>
+        <input type="text">
+    </div>
+    <div class="form-row">
+        <label>Nama</label>
+        <input type="text">
+    </div>
+    <div class="form-row">
+        <label>Alamat</label>
+        <textarea rows="3"></textarea>
+    </div>
+    <button class="submit">Submit</button>
+    `;
+}
+
+function tampilJadwal(){
+    document.getElementById("content").innerHTML = `
+    <h2 style="text-align:center;">Jadwal Kuliah</h2>
+    <table>
+        <tr>
+            <th class="waktu">Waktu</th>
+            <th class="senin">Senin</th>
+            <th class="selasa">Selasa</th>
+            <th class="rabu">Rabu</th>
+            <th class="kamis">Kamis</th>
+        </tr>
+        <tr>
+            <td class="waktu">08:00 - 09:30</td>
+            <td class="senin">Matematika Diskrit</td>
+            <td class="selasa">Algoritma dan Pemrograman</td>
+            <td class="rabu">Sistem Operasi</td>
+            <td class="kamis">Bahasa Inggris</td>
+        </tr>
+        <tr>
+            <td class="waktu">09:30 - 11:00</td>
+            <td class="senin">Jaringan Komputer</td>
+            <td class="selasa">Kalkulus</td>
+            <td class="rabu"></td>
+            <td class="kamis">Pemrograman Web</td>
+        </tr>
+        <tr>
+            <td class="waktu">11:00 - 12:30</td>
+            <td class="senin" colspan="2">Proyek Akhir</td>
+            <td class="rabu">Pemrograman Mobile</td>
+            <td class="kamis">Kecerdasan Buatan</td>
+        </tr>
+        <tr>
+            <td class="waktu">13:00 - 14:30</td>
+            <td class="senin">Manajemen Basis Data</td>
+            <td class="selasa">Arsitektur Komputer</td>
+            <td class="rabu">Keamanan Siber</td>
+            <td class="kamis"></td>
+        </tr>
+        <tr>
+            <td colspan="5" class="istirahat">Istirahat</td>
+        </tr>
+    </table>
+
+    <div class="back">
+        <a href="dump.html">Kembali ke Beranda</a>
+    </div>
+    `;
+}
+</script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <img src="logo_unindra.png">
+        <div class="judul">
+            <h1>UNIVERSITAS INDRAPRASTA PGRI</h1>
+            <p><b> Jl. Nangka No. 58 Tanjung Barat - Jaksel</b></p>
+        </div>
+    </div>
+
+    <div class="isi">
+
+        <div class="menu">
+            <h3>TAMPIL DATA<br>KAMPUS A</h3>
+            <button onclick="tampilForm()">Input Data Mahasiswa</button>
+            <button>Tampil Data Mahasiswa</button>
+            <button onclick="tampilJadwal()">Jadwal Kuliah Mahasiswa</button>
+        </div>
+
+        <div class="content" id="content">
+            <h2>Input Data Mahasiswa</h2>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <b>Created By @202433500294 AULIA ADLIN Tahun 2024-2025</b>
+    </div>
+
+</div>
+
+</body>
+</html>
